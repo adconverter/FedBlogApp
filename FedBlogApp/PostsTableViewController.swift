@@ -11,44 +11,60 @@ import Alamofire
 import Unbox
 
 class PostsTableViewController: UITableViewController {
-
+    
+    
+    var posts: [Post] = []
+    let mainURL = URL(string: "http://fed-blog.herokuapp.com/api/v1/posts")!
+    let refresh = UIRefreshControl()
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        updatePostsTableView()
+        refresh.addTarget(self, action: #selector(PostsTableViewController.updatePostsTableView), for: UIControlEvents.valueChanged)
+        tableView.refreshControl = refresh
+            }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return posts.count
     }
-
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "postPreviewCell", for: indexPath)
+        let post = posts[indexPath.row]
+        cell.textLabel?.text = post.title
+        cell.detailTextLabel?.text = post.text
         return cell
     }
-    */
-
+    
+    @objc func updatePostsTableView() -> Void {
+        Alamofire.request(mainURL).responseData(completionHandler: {response in
+            if let data = response.data, let posts: [Post] = try? unbox(data: data) {
+                DispatchQueue.main.async {
+                    self.posts = posts
+                    self.tableView.reloadData()
+                    self.refresh.endRefreshing()
+               }
+                
+            }
+        })
+    }
+    
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
