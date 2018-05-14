@@ -15,18 +15,15 @@ class FullPostViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         clearView()
-        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        
     }
-    @IBOutlet weak var fullPostText: UILabel!
-    
     
     func updateFullPostView() {
         fetchFullPost(id: id, completionHandler: {post in
@@ -34,25 +31,27 @@ class FullPostViewController: UIViewController {
             self.fullPostText.text = post.text
             self.postTitle.text = post.title
         })
+        
         fetchMarks(id: id, completionHandler: {marks in
             guard let marks = marks else {print("Marks wasn't unwrapped")
                 return}
             for mark in marks{
                 let label = UILabel()
-                print(mark)
                 label.text = mark.name
                 label.textColor = UIColor.white
                 label.backgroundColor = self.firstMarkLabel.backgroundColor
                 self.postMarksStack.addArrangedSubview(label)
             }
-            
         })
     }
+    
     func clearView() {
         postTitle.text = ""
         postText.text = ""
         firstMarkLabel.isHidden = true
     }
+    
+    @IBOutlet weak var fullPostText: UILabel!
     @IBOutlet weak var postMarksStack: UIStackView!
     @IBOutlet weak var postTitle: UILabel!
     @IBOutlet weak var postText: UILabel!

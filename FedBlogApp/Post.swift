@@ -33,4 +33,4 @@ extension Mark: Unboxable {
         self.id = try unboxer.unbox(key: "id")
         self.name = try unboxer.unbox(key: "name")
     }
-   }
+}

@@ -93,9 +93,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="LLF-RL-Oe0" firstAttribute="top" secondItem="ehZ-VE-pww" secondAttribute="bottom" constant="64" id="6cO-dN-Awh"/>
                             <constraint firstItem="ehZ-VE-pww" firstAttribute="leading" secondItem="jMl-lC-Ycf" secondAttribute="leading" constant="16" id="AyZ-lY-WpU"/>
                             <constraint firstItem="359-Cu-WuI" firstAttribute="top" secondItem="jMl-lC-Ycf" secondAttribute="top" id="DWT-vB-nZL"/>
+                            <constraint firstItem="LLF-RL-Oe0" firstAttribute="top" secondItem="359-Cu-WuI" secondAttribute="bottom" constant="100" id="UXf-ln-0go"/>
                             <constraint firstItem="359-Cu-WuI" firstAttribute="leading" secondItem="jMl-lC-Ycf" secondAttribute="leading" constant="16" id="Wwx-ZO-9PW"/>
                             <constraint firstItem="ehZ-VE-pww" firstAttribute="top" secondItem="359-Cu-WuI" secondAttribute="bottom" constant="16" id="f8m-tm-E0f"/>
                             <constraint firstItem="LLF-RL-Oe0" firstAttribute="leading" secondItem="jMl-lC-Ycf" secondAttribute="leading" constant="16" id="mEG-F2-FV9"/>
@@ -123,6 +123,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hJN-RV-Bo8">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

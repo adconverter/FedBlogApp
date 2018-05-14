@@ -14,7 +14,7 @@ func fetchPosts(completionHandler: @escaping ([Post]?) -> Void) {
     let url = mainURL
     Alamofire.request(url).responseData(completionHandler: {response in
         if let data = response.data, let posts: [Post] = try? unbox(data: data) {
-           completionHandler(posts)
+            completionHandler(posts)
         } else {print("Posts data wasn't unwrapped or unboxed")
             completionHandler(nil)
         }

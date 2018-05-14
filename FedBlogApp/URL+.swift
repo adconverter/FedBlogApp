@@ -11,7 +11,8 @@ extension URL {
     func withAdditionalPath(path: [String]) -> URL? {
         var components = URLComponents(url: self, resolvingAgainstBaseURL: true)
         for unit in path{
-        components?.path += "/\(unit)"       }/*components?.queryItems = queries.flatMap{URLQueryItem(name: $0.0, value: $0.1)}*/
+            components?.path += "/\(unit)"
+        }
         return components?.url
     }
 }
