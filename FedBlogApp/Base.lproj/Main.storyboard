@@ -43,7 +43,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="uIf-qT-mKX" kind="show" id="WNx-oc-nIu"/>
+                                    <segue destination="uIf-qT-mKX" kind="show" identifier="segueToFullPost" id="WNx-oc-nIu"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -67,39 +67,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ehZ-VE-pww">
-                                <rect key="frame" x="16" y="111" width="234.5" height="20.5"/>
+                                <rect key="frame" x="16" y="111" width="53" height="20.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mark" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lqq-Ix-61R">
-                                        <rect key="frame" x="0.0" y="0.0" width="40.5" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mark 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lqq-Ix-61R">
+                                        <rect key="frame" x="0.0" y="0.0" width="53" height="20.5"/>
                                         <color key="backgroundColor" red="0.94324225132761441" green="0.50912479575163394" blue="0.31225107230392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mark" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WdR-yr-SmC">
-                                        <rect key="frame" x="48.5" y="0.0" width="40.5" height="20.5"/>
-                                        <color key="backgroundColor" red="0.94324225129999995" green="0.50912479580000003" blue="0.31225107229999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mark" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpu-sQ-wqB">
-                                        <rect key="frame" x="97" y="0.0" width="40.5" height="20.5"/>
-                                        <color key="backgroundColor" red="0.94324225129999995" green="0.50912479580000003" blue="0.31225107229999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mark" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lad-r3-fcm">
-                                        <rect key="frame" x="145.5" y="0.0" width="40.5" height="20.5"/>
-                                        <color key="backgroundColor" red="0.94324225129999995" green="0.50912479580000003" blue="0.31225107229999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mark" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bSh-Vu-rVT">
-                                        <rect key="frame" x="194" y="0.0" width="40.5" height="20.5"/>
-                                        <color key="backgroundColor" red="0.94324225129999995" green="0.50912479580000003" blue="0.31225107229999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -133,6 +105,9 @@
                     </view>
                     <connections>
                         <outlet property="fullPostText" destination="LLF-RL-Oe0" id="v3s-Eq-jlZ"/>
+                        <outlet property="postMarksStack" destination="ehZ-VE-pww" id="hCo-Ee-4el"/>
+                        <outlet property="postText" destination="LLF-RL-Oe0" id="lN7-RD-emD"/>
+                        <outlet property="postTitle" destination="359-Cu-WuI" id="ETe-Bf-rEF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="egl-El-gbS" userLabel="First Responder" sceneMemberID="firstResponder"/>

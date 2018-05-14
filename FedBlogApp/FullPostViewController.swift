@@ -7,11 +7,17 @@
 //
 
 import UIKit
+import Alamofire
+import Unbox
 
 class FullPostViewController: UIViewController {
-
+    var id: Int = 0
+    var postMarks: [Post] = []
+    var post: Post = Post()
+    let markPath = "mark"
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
 
         // Do any additional setup after loading the view.
@@ -22,6 +28,16 @@ class FullPostViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     @IBOutlet weak var fullPostText: UILabel!
+    
+
+    func updateFullPostView() {
+        let path: [String] = [String(id)]
+        let postURL = mainURL.withAdditionalPath(path: path)
+        
+    }
+    @IBOutlet weak var postMarksStack: UIStackView!
+    @IBOutlet weak var postTitle: UILabel!
+    @IBOutlet weak var postText: UILabel!
     
 
     /*

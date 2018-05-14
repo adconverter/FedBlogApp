@@ -23,3 +23,14 @@ extension Post: Unboxable {
         self.title = try unboxer.unbox(key: "title")
     }
 }
+struct Mark: Codable {
+    var id: Int?
+    var name: String?
+}
+
+extension Mark: Unboxable {
+    init(unboxer: Unboxer) throws {
+        self.id = try unboxer.unbox(key: "id")
+        self.name = try unboxer.unbox(key: "name")
+    }
+   }
