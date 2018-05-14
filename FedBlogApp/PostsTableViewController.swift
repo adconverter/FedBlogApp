@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import Alamofire
-import Unbox
 
 class PostsTableViewController: UITableViewController {
     
@@ -51,16 +49,19 @@ class PostsTableViewController: UITableViewController {
     }
     
     @objc func updatePostsTableView() -> Void {
-        Alamofire.request(mainURL).responseData(completionHandler: {response in
-            if let data = response.data, let posts: [Post] = try? unbox(data: data) {
-                DispatchQueue.main.async {
-                    self.posts = posts
-                    self.tableView.reloadData()
-                    self.refresh.endRefreshing()
-                }
-                
-            } else {print("Data wasn't unwrapped or unboxed")}
+        fetchPosts(completionHandler: {posts in
+            DispatchQueue.main.async {
+                guard let posts = posts else {return}
+                self.posts = posts
+                self.tableView.reloadData()
+                self.refresh.endRefreshing()
+            }
         })
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let indexPath = tableView.indexPathForSelectedRow, segue.identifier == "segueToFullPost", let fullPostViewController = segue.destination as? FullPostViewController else {return}
+        fullPostViewController.id = posts[indexPath.row].id!
+        fullPostViewController.updateFullPostView()
     }
     
     

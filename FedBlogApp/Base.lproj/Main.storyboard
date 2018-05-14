@@ -104,6 +104,7 @@
                         <viewLayoutGuide key="safeArea" id="jMl-lC-Ycf"/>
                     </view>
                     <connections>
+                        <outlet property="firstMarkLabel" destination="lqq-Ix-61R" id="96f-p1-08R"/>
                         <outlet property="fullPostText" destination="LLF-RL-Oe0" id="v3s-Eq-jlZ"/>
                         <outlet property="postMarksStack" destination="ehZ-VE-pww" id="hCo-Ee-4el"/>
                         <outlet property="postText" destination="LLF-RL-Oe0" id="lN7-RD-emD"/>

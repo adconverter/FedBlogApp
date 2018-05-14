@@ -7,47 +7,66 @@
 //
 
 import UIKit
-import Alamofire
-import Unbox
+
 
 class FullPostViewController: UIViewController {
     var id: Int = 0
-    var postMarks: [Post] = []
-    var post: Post = Post()
-    let markPath = "mark"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-
-        // Do any additional setup after loading the view.
     }
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        clearView()
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
     @IBOutlet weak var fullPostText: UILabel!
     
-
+    
     func updateFullPostView() {
-        let path: [String] = [String(id)]
-        let postURL = mainURL.withAdditionalPath(path: path)
-        
+        fetchFullPost(id: id, completionHandler: {post in
+            guard let post = post else {return}
+            self.fullPostText.text = post.text
+            self.postTitle.text = post.title
+        })
+        fetchMarks(id: id, completionHandler: {marks in
+            guard let marks = marks else {print("Marks wasn't unwrapped")
+                return}
+            for mark in marks{
+                let label = UILabel()
+                print(mark)
+                label.text = mark.name
+                label.textColor = UIColor.white
+                label.backgroundColor = self.firstMarkLabel.backgroundColor
+                self.postMarksStack.addArrangedSubview(label)
+            }
+            
+        })
+    }
+    func clearView() {
+        postTitle.text = ""
+        postText.text = ""
+        firstMarkLabel.isHidden = true
     }
     @IBOutlet weak var postMarksStack: UIStackView!
     @IBOutlet weak var postTitle: UILabel!
     @IBOutlet weak var postText: UILabel!
+    @IBOutlet weak var firstMarkLabel: UILabel!
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
