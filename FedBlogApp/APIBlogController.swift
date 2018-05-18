@@ -37,11 +37,11 @@ func fetchMarks(id: Int, completionHandler: @escaping ([Mark]?) -> Void) {
     let path: [String] = [String(id), "marks"]
     let url = mainURL.withAdditionalPath(path: path)!
     Alamofire.request(url).responseData(completionHandler: {response in
-        if let data = response.data, let mark: [Mark] = try? unbox(data: data) {
-            completionHandler(mark)
+        if let data = response.data, let marks: [Mark] = try? unbox(data: data) {
+            completionHandler(marks)
         } else {print("Marks data wasn't unwrapped or unboxed")
             completionHandler(nil)
-        }
+                }
     })
 }
 

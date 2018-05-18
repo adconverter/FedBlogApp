@@ -57,8 +57,7 @@ class FullPostViewController: UIViewController {
     @IBOutlet weak var postText: UILabel!
     @IBOutlet weak var firstMarkLabel: UILabel!
     
-    
-    /*
+/*
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation

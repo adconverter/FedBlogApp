@@ -47,6 +47,15 @@ class PostsTableViewController: UITableViewController {
         return cell
     }
     
+    @IBAction func exit(_ sender: Any) {
+        logout({statusCode in
+      guard statusCode == 200 else {
+                return}
+            self.performSegue(withIdentifier: "unwindToAuthorizationView", sender: self)
+        })
+        
+    }
+    
     @objc func updatePostsTableView() -> Void {
         fetchPosts(completionHandler: {posts in
             DispatchQueue.main.async {

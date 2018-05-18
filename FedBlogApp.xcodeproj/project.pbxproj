@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		440F62A220ACFA3F00F124D9 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440F62A120ACFA3F00F124D9 /* AuthorizationViewController.swift */; };
+		440F62AC20AD3D3900F124D9 /* AuthorizationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440F62AB20AD3D3900F124D9 /* AuthorizationController.swift */; };
+		440F62AE20AECDF000F124D9 /* CommentsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440F62AD20AECDF000F124D9 /* CommentsController.swift */; };
+		440F62B020AED24A00F124D9 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440F62AF20AED24A00F124D9 /* Comment.swift */; };
 		4431345820A9EFF7008BA545 /* APIBlogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4431345720A9EFF7008BA545 /* APIBlogController.swift */; };
 		449C601820A90533004180D5 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449C601720A90533004180D5 /* Post.swift */; };
 		449C601A20A9BBBE004180D5 /* URL+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449C601920A9BBBE004180D5 /* URL+.swift */; };
@@ -23,6 +27,10 @@
 		165D66B5882499B4981844BB /* Pods-FedBlogApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FedBlogApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-FedBlogApp/Pods-FedBlogApp.release.xcconfig"; sourceTree = "<group>"; };
 		2C90617760362CDAB6625841 /* Pods-FedBlogApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FedBlogApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FedBlogApp/Pods-FedBlogApp.debug.xcconfig"; sourceTree = "<group>"; };
 		3616DCB1CBBAA6B3568EEE80 /* Pods_FedBlogApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FedBlogApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		440F62A120ACFA3F00F124D9 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
+		440F62AB20AD3D3900F124D9 /* AuthorizationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationController.swift; sourceTree = "<group>"; };
+		440F62AD20AECDF000F124D9 /* CommentsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsController.swift; sourceTree = "<group>"; };
+		440F62AF20AED24A00F124D9 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		4431345720A9EFF7008BA545 /* APIBlogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIBlogController.swift; sourceTree = "<group>"; };
 		449C601720A90533004180D5 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		449C601920A9BBBE004180D5 /* URL+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+.swift"; sourceTree = "<group>"; };
@@ -57,6 +65,13 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		440F62B220AED3E200F124D9 /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Authorization;
+			sourceTree = "<group>";
+		};
 		44BA892020A7B6A300AFBB7F = {
 			isa = PBXGroup;
 			children = (
@@ -78,11 +93,16 @@
 		44BA892B20A7B6A400AFBB7F /* FedBlogApp */ = {
 			isa = PBXGroup;
 			children = (
+				440F62AB20AD3D3900F124D9 /* AuthorizationController.swift */,
+				440F62B220AED3E200F124D9 /* Authorization */,
 				44BA892C20A7B6A400AFBB7F /* AppDelegate.swift */,
 				44BA893020A7B6A400AFBB7F /* Main.storyboard */,
+				440F62A120ACFA3F00F124D9 /* AuthorizationViewController.swift */,
 				44BA893E20A7C03900AFBB7F /* PostsTableViewController.swift */,
 				449C601720A90533004180D5 /* Post.swift */,
 				44BA894020A7C05D00AFBB7F /* FullPostViewController.swift */,
+				440F62AD20AECDF000F124D9 /* CommentsController.swift */,
+				440F62AF20AED24A00F124D9 /* Comment.swift */,
 				4431345720A9EFF7008BA545 /* APIBlogController.swift */,
 				449C601920A9BBBE004180D5 /* URL+.swift */,
 				44BA893320A7B6A500AFBB7F /* Assets.xcassets */,
@@ -214,10 +234,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				440F62A220ACFA3F00F124D9 /* AuthorizationViewController.swift in Sources */,
 				449C601A20A9BBBE004180D5 /* URL+.swift in Sources */,
+				440F62AE20AECDF000F124D9 /* CommentsController.swift in Sources */,
 				44BA894120A7C05D00AFBB7F /* FullPostViewController.swift in Sources */,
 				4431345820A9EFF7008BA545 /* APIBlogController.swift in Sources */,
+				440F62B020AED24A00F124D9 /* Comment.swift in Sources */,
 				44BA892D20A7B6A400AFBB7F /* AppDelegate.swift in Sources */,
+				440F62AC20AD3D3900F124D9 /* AuthorizationController.swift in Sources */,
 				44BA893F20A7C03900AFBB7F /* PostsTableViewController.swift in Sources */,
 				449C601820A90533004180D5 /* Post.swift in Sources */,
 			);
