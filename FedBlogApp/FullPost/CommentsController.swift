@@ -10,14 +10,14 @@ import Foundation
 import Alamofire
 import Unbox
 
-func commentOn(text: String, idPost: Int, completionHandler: @escaping (Int?) -> Void) {
+func submitComment(text: String, idPost: Int, completionHandler: @escaping (Int?) -> Void) {
     let idUser = 1
     let commentURL = URL(string: "http://fed-blog.herokuapp.com/api/v1/comments")!
     let parameters: [String: Any] = [
         "text": text,
         "idPost": idPost,
         "idUser": idUser
-        ]
+    ]
     request(commentURL, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON(completionHandler: {responseJSON in
         guard let statusCode = responseJSON.response?.statusCode else {
             completionHandler(nil)
@@ -28,11 +28,12 @@ func commentOn(text: String, idPost: Int, completionHandler: @escaping (Int?) ->
 }
 
 func fetchComments(id: Int, completionHandler: @escaping ([Comment]?) -> Void) {
-    let commentURL = URL(string: "http://fed-blog.herokuapp.com/api/v1/comments")!
+    let path = ["posts", String(id)]
+    let commentURL = URL(string: "http://fed-blog.herokuapp.com/api/v1/comments")!.withAdditionalPath(path: path)!
     Alamofire.request(commentURL).responseData(completionHandler: {response in
         if let data = response.data, let comments: [Comment] = try? unbox(data: data) {
             completionHandler(comments)
-        } else {print("Marks data wasn't unwrapped or unboxed")
+        } else {print("Comments data wasn't unwrapped or unboxed, \(commentURL)")
             completionHandler(nil)
         }
     })

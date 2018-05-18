@@ -13,7 +13,7 @@ struct Comment {
     var datePublic: String?
     var id: Int?
     var text: String?
-    }
+}
 
 extension Comment: Unboxable {
     init(unboxer: Unboxer) throws {
@@ -21,5 +21,5 @@ extension Comment: Unboxable {
         self.datePublic = try unboxer.unbox(key: "datePublic")
         self.id = try unboxer.unbox(key: "id")
         self.text = try unboxer.unbox(key: "text")
-        }
+    }
 }

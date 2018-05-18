@@ -49,7 +49,7 @@ class PostsTableViewController: UITableViewController {
     
     @IBAction func exit(_ sender: Any) {
         logout({statusCode in
-      guard statusCode == 200 else {
+            guard statusCode == 200 else {
                 return}
             self.performSegue(withIdentifier: "unwindToAuthorizationView", sender: self)
         })

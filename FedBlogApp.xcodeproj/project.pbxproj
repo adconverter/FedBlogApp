@@ -65,11 +65,41 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		440F62B220AED3E200F124D9 /* Authorization */ = {
+		440F62B320AF20B500F124D9 /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
+				440F62AB20AD3D3900F124D9 /* AuthorizationController.swift */,
+				440F62A120ACFA3F00F124D9 /* AuthorizationViewController.swift */,
 			);
 			path = Authorization;
+			sourceTree = "<group>";
+		};
+		440F62B420AF20D300F124D9 /* FullPost */ = {
+			isa = PBXGroup;
+			children = (
+				44BA894020A7C05D00AFBB7F /* FullPostViewController.swift */,
+				440F62AD20AECDF000F124D9 /* CommentsController.swift */,
+			);
+			path = FullPost;
+			sourceTree = "<group>";
+		};
+		440F62B520AF212F00F124D9 /* ListOfPosts */ = {
+			isa = PBXGroup;
+			children = (
+				44BA893E20A7C03900AFBB7F /* PostsTableViewController.swift */,
+				4431345720A9EFF7008BA545 /* APIBlogController.swift */,
+			);
+			path = ListOfPosts;
+			sourceTree = "<group>";
+		};
+		440F62B620AF21EB00F124D9 /* Structures and other */ = {
+			isa = PBXGroup;
+			children = (
+				449C601720A90533004180D5 /* Post.swift */,
+				440F62AF20AED24A00F124D9 /* Comment.swift */,
+				449C601920A9BBBE004180D5 /* URL+.swift */,
+			);
+			path = "Structures and other";
 			sourceTree = "<group>";
 		};
 		44BA892020A7B6A300AFBB7F = {
@@ -93,18 +123,12 @@
 		44BA892B20A7B6A400AFBB7F /* FedBlogApp */ = {
 			isa = PBXGroup;
 			children = (
-				440F62AB20AD3D3900F124D9 /* AuthorizationController.swift */,
-				440F62B220AED3E200F124D9 /* Authorization */,
+				440F62B320AF20B500F124D9 /* Authorization */,
 				44BA892C20A7B6A400AFBB7F /* AppDelegate.swift */,
 				44BA893020A7B6A400AFBB7F /* Main.storyboard */,
-				440F62A120ACFA3F00F124D9 /* AuthorizationViewController.swift */,
-				44BA893E20A7C03900AFBB7F /* PostsTableViewController.swift */,
-				449C601720A90533004180D5 /* Post.swift */,
-				44BA894020A7C05D00AFBB7F /* FullPostViewController.swift */,
-				440F62AD20AECDF000F124D9 /* CommentsController.swift */,
-				440F62AF20AED24A00F124D9 /* Comment.swift */,
-				4431345720A9EFF7008BA545 /* APIBlogController.swift */,
-				449C601920A9BBBE004180D5 /* URL+.swift */,
+				440F62B520AF212F00F124D9 /* ListOfPosts */,
+				440F62B620AF21EB00F124D9 /* Structures and other */,
+				440F62B420AF20D300F124D9 /* FullPost */,
 				44BA893320A7B6A500AFBB7F /* Assets.xcassets */,
 				44BA893520A7B6A500AFBB7F /* LaunchScreen.storyboard */,
 				44BA893820A7B6A500AFBB7F /* Info.plist */,

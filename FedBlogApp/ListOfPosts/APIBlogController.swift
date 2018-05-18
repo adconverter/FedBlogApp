@@ -41,7 +41,7 @@ func fetchMarks(id: Int, completionHandler: @escaping ([Mark]?) -> Void) {
             completionHandler(marks)
         } else {print("Marks data wasn't unwrapped or unboxed")
             completionHandler(nil)
-                }
+        }
     })
 }
 
